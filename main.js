@@ -46,4 +46,11 @@ function redrawSquares(size) {
     drawSquares(size);
 }
 
+function newGrid() {
+    return redrawSquares(promptUser());
+}
+
+const newGridButton = document.querySelector('#new-grid')
+newGridButton.addEventListener('click', newGrid);
+
 drawSquares(16);

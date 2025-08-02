@@ -4,14 +4,28 @@ function promptUser() {
     return prompt("Input a number (less than 100)", 16);
 }
 
+function getRandomNumber(maxNumber = 255) {
+    return Math.floor(Math.random() * maxNumber) + 1;
+}
+
+function hoverCallback(event) {
+    const target = event.target
+    if (target.classList.contains('square')) {
+        target.style.backgroundColor = `rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`
+    }
+}
+
 function drawSquares(size = 16) {
     for (let i = 0; i < size; i++) {
         const squareRow = document.createElement('div');
 
         for (let i = 0; i < size; i++) {
             const newSquare = document.createElement('div');
+            newSquare.classList.add('square')
             squareRow.appendChild(newSquare);
         }
+
+        squareRow.addEventListener('mouseover', hoverCallback)
 
         sketchContainer.appendChild(squareRow);
     }

@@ -8,6 +8,20 @@
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: rgb(17, 17, 17);
+    color: rgb(225, 225, 225);
+
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
 #sketch-container>div {
     display: flex;
 
